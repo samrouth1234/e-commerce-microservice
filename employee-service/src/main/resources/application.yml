@@ -1,0 +1,26 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: EMPLOYEE-SERVICE
+
+spring.jpa:
+  database: POSTGRESQL
+  hibernate.ddl-auto: update
+  show-sql: true
+
+spring.datasource:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/microservice
+  username: postgres
+  password: 123
+
+eureka:
+  client:
+    register-with-eureka: true                    #registers the service with eureka server
+    fetch-registry: true                           #fetches the registry from the eureka server
+    service-url:                                   #eureka server url
+      defaultZone: http://localhost:8761/eureka/ #default zone
+  instance:                                        #instance configuration for the service
+    hostname: localhost
